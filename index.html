@@ -28,11 +28,11 @@
                 address = data.jibunAddress;
             }
 
-          // var postData = {
-          //     address : address,
-          //     zonecode : data.zonecode
-          // };
-          window.webkit.postMessage(address)
+          var postData = {
+              address : address,
+              zonecode : data.zonecode
+          };
+          window.webkit.postMessage(postData)
         },
         width : '100%',
         height : '100%'
