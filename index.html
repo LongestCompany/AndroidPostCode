@@ -19,6 +19,9 @@
         //..ex deconstruct event into action & params
         var action = event.data.action;
         var params = event.data.params;
+
+        console.log("onReceivedPostMessage "+event);
+
     }
 
     function onReceivedActivityMessageViaJavascriptInterface(json){
@@ -26,13 +29,14 @@
         var data = JSON.parse(json);
         var action = data.action;
         var params = data.params;
+        console.log("onReceivedActivityMessageViaJavascriptInterface "+event);
     }
 
 
     // 우편번호 찾기 화면을 넣을 element
     var element_layer = document.getElementById('layer');
 
-    function execKakaoPostcode() {
+    function sample2_execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
 
@@ -80,7 +84,7 @@
                 }
 
                 // 주소만 필요하므로 이것만 전송한다.
-                window.Android.processDATA(fullRoadAddr);
+                window.MysosoApp.processDATA(fullRoadAddr);
             },
             width : '100%',
             height : '100%'
