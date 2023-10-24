@@ -16,6 +16,7 @@
     window.addEventListener("message", onReceivedPostMessage, false);
 
     function postMessageToiOS(postData) {
+        console.log(postData);  
         window.webkit.messageHandlers.callBackHandler.postMessage(postData);
     }
 
